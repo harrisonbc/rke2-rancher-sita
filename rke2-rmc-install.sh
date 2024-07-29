@@ -237,8 +237,8 @@ helm repo update
 kubectl create namespace cattle-system
 
 echo 
-echo "Create Certificate Secrets"
-echo "=========================="
+echo "Create Certificate Secrets."
+echo "==========================="
 
 kubectl -n cattle-system create secret tls tls-rancher-ingress \
  --cert=tls.cer \
@@ -265,6 +265,6 @@ helm upgrade --install rancher rancher-prime/rancher \
 
 kubectl rollout status deployment/rancher -n cattle-system
 
-echo "RKE2 & Rancher Installed"
-echo "========================"
+echo "RKE2 & Rancher Installed."
+echo "========================="
 echo
