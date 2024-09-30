@@ -96,7 +96,7 @@ alias k=kubectl
 
 # We can now install the kubernetes package manager
 echo 
-echo "Install helm command in jumphost."
+echo "Install helm command on jumphost."
 echo "================================="
 echo
 
