@@ -258,10 +258,11 @@ helm upgrade --install rancher rancher-prime/rancher \
    --version=$RANCHER_VERSION \
    --set bootstrapPassword="$RANCHER_BOOTSTRAP_PASSWORD" \
    --set hostname=$CLUSTERNAME \
-   --set ingress.tls.source=secret
-
-# Private CA add: 
-# --set privateCA=true \
+   --set proxy=http://${PROXY_HOST} \
+   --set noProxy=127.0.0.0/8\\,10.0.0.0/8\\,cattle-system.svc\\,172.16.0.0/12\\,192.168.0.0/16\\,.svc\\,.cluster.local \
+   --set ingress.tls.source=secret \
+   --set privateCA=true \
+   --set agentTLSMode="system-store"
 
 kubectl rollout status deployment/rancher -n cattle-system
 
