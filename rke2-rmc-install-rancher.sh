@@ -52,7 +52,7 @@ helm upgrade --install rancher rancher-prime/rancher \
    --set bootstrapPassword="$RANCHER_BOOTSTRAP_PASSWORD" \
    --set hostname=$CLUSTERNAME \
    --set proxy=http://${RANCHER_PROXY} \
-   --set noProxy=${RANCHER_NO_PROXY//\\/\/\/} \
+   --set noProxy=${RANCHER_NO_PROXY} \
    --set ingress.tls.source=secret \
    --set privateCA=true \
    --set agentTLSMode="system-store"
